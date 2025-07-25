@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Submission Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #2c005f, #000000);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      padding: 40px 15px;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px 40px;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 0 30px rgba(191, 104, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      text-align: center;
+      color: #d7b5ff;
+      margin-bottom: 25px;
+      font-size: 26px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    @media (min-width: 600px) {
+      .row {
+        flex-direction: row;
+      }
+    }
+
+    input, textarea {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      padding: 12px 14px;
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #cccccc;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+  background: #a855f7;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-link {
+  display: inline-block;
+  text-align: center;
+  background-color: #a855f7;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.btn-link:hover {
+  background-color: #c084fc;
+}
+
+    
+
+    button:hover {
+      background: #c084fc;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Patient Submission Form</h1>
+    <form id="patientForm">
+      <div class="row">
+        <input type="text" placeholder="First Name" required />
+        <input type="text" placeholder="Last Name" required />
+      </div>
+      <div class="row">
+        <input type="email" placeholder="Email Address" required />
+        <input type="tel" placeholder="Phone Number" required />
+      </div>
+      <div class="row">
+        <input type="tel" placeholder="Alternative Phone Number" />
+        <input type="text" placeholder="City" />
+      </div>
+      <input type="text" placeholder="State / Province" />
+      <textarea rows="5" placeholder="Describe the patient's problem..." required></textarea>
+      <a href="dashboard.html" class="btn-link">Next ➤</a>
+
+      
+
+    </form>
+  </div>
+
+ 
+</body>
+</html>

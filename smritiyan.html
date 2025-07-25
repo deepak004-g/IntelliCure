@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smritiyan Analyzer Upload</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f0f0f;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #cccccc;
+      margin-bottom: 30px;
+    }
+
+    .tag-container {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tag {
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: white;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+
+    .tag.blue { background-color: #3b82f6; }
+    .tag.green { background-color: #10b981; }
+    .tag.orange { background-color: #f97316; }
+
+    .upload-box {
+      background-color: #1c1c1c;
+      border: 2px dashed #555;
+      border-radius: 10px;
+      padding: 40px;
+      width: 400px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .upload-box:hover {
+      border-color: #888;
+    }
+
+    .upload-icon {
+      font-size: 48px;
+      color: #3b82f6;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .upload-success {
+      margin-top: 20px;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .custom-btn {
+      background-color: #3b82f6;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .custom-btn:hover {
+      background-color: #60a5fa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Smritiyan – Memory Analysis AI</h1>
+  <p>Upload EEG, MRI, or brain scan images for cognitive pattern analysis and detection.</p>
+
+  <div class="tag-container">
+    <div class="tag blue">Memory Pattern Analysis</div>
+    <div class="tag green">Cognitive Health</div>
+    <div class="tag orange">Early Anomaly Detection</div>
+  </div>
+
+  <form id="uploadForm">
+    <div class="upload-box" id="dropArea">
+      <div class="upload-icon">⬆️</div>
+      <p>Drop your brain scan file here<br><small>or click to browse</small></p>
+      <label class="custom-btn">
+        Choose File
+        <input type="file" id="fileInput" accept=".png, .jpg, .jpeg, .pdf" />
+      </label>
+    </div>
+    <div id="uploadStatus" class="upload-success"></div>
+  </form>
+
+  <script>
+    const fileInput = document.getElementById("fileInput");
+    const uploadStatus = document.getElementById("uploadStatus");
+    const dropArea = document.getElementById("dropArea");
+
+    fileInput.addEventListener("change", function () {
+      if (fileInput.files.length > 0) {
+        const fileName = fileInput.files[0].name;
+        uploadStatus.textContent = `${fileName} uploaded successfully!`;
+      }
+    });
+
+    // Optional: drag and drop
+    dropArea.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      dropArea.style.borderColor = "#60a5fa";
+    });
+
+    dropArea.addEventListener("dragleave", () => {
+      dropArea.style.borderColor = "#555";
+    });
+
+    dropArea.addEventListener("drop", (e) => {
+      e.preventDefault();
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        fileInput.files = files;
+        const fileName = files[0].name;
+        uploadStatus.textContent = `${fileName} uploaded successfully!`;
+      }
+    });
+  </script>
+
+</body>
+</html>

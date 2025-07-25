@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neuro Setu – MRI Classification</title>
+  <link rel="stylesheet" href="neuro-setu.css" />
+</head>
+<body>
+  <div class="container">
+    <h1><span class="highlight">Neuro Setu</span> – Automated Brain Tumor Recognition</h1>
+    <p class="subtitle">Cutting-edge AI for automated brain tumor detection in MRI images.</p>
+
+    <div class="feature-buttons">
+      <button class="btn blue">🧠 Neurologist-Level Accuracy</button>
+      <button class="btn purple">📈 Brain Activity Analysis</button>
+      <button class="btn red">🧬 Tumor Detection</button>
+      <button class="btn teal">🩻 MRI Scan Analysis</button>
+    </div>
+
+    <div class="upload-section">
+      <h2>MRI Image Upload</h2>
+      <p class="support-info">Supported formats: JPEG, PNG. Max size: 50MB</p>
+
+      <div class="upload-box" id="uploadBox">
+        <input type="file" id="fileInput" accept="image/jpeg,image/png" hidden />
+        <div id="uploadArea" onclick="document.getElementById('fileInput').click();">
+          <div class="upload-icon">⬆️</div>
+          <p>Drop your MRI brain scan here<br /><span class="browse">or click to browse files</span></p>
+        </div>
+        <div class="upload-feedback" id="uploadFeedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="neuro-setu.js"></script>
+</body>
+</html>

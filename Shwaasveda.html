@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shwaas Veda – Pneumonia Screening</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f0f0f;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      color: #f59e0b;
+    }
+
+    p {
+      font-size: 16px;
+      color: #cccccc;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .tag-container {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tag {
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: white;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+
+    .tag.blue { background-color: #3b82f6; }
+    .tag.green { background-color: #10b981; }
+    .tag.orange { background-color: #f59e0b; }
+
+    .upload-container {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      width: 420px;
+      text-align: center;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .upload-box {
+      border: 2px dashed #666;
+      border-radius: 10px;
+      padding: 30px;
+      margin-top: 10px;
+      transition: border-color 0.3s ease;
+    }
+
+    .upload-box:hover {
+      border-color: #999;
+    }
+
+    .upload-box p {
+      color: #bbb;
+      margin-top: 10px;
+    }
+
+    .upload-icon {
+      font-size: 36px;
+      color: #888;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .custom-btn {
+      background-color: #3b82f6;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .custom-btn:hover {
+      background-color: #60a5fa;
+    }
+
+    .upload-success {
+      margin-top: 20px;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1><span class="highlight">Shwaas Veda</span> – AI-Powered Pneumonia Screening</h1>
+  <p>Detects pneumonia from chest X-rays with high accuracy, aiding in quick and efficient diagnosis.</p>
+
+  <div class="tag-container">
+    <div class="tag blue">🩺 Radiologist-Level Accuracy</div>
+    <div class="tag green">🌿 Respiratory Health Analysis</div>
+    <div class="tag orange">⚠️ Early Pneumonia Detection</div>
+  </div>
+
+  <form id="uploadForm">
+    <div class="upload-container">
+      <h3>Chest X-Ray Image Upload</h3>
+      <p>Supported formats: JPEG, PNG | Max size: 10MB</p>
+      <div class="upload-box" id="dropArea">
+        <div class="upload-icon">⬆️</div>
+        <p>Drop your Chest X-Ray image here<br><small>or click to browse files</small></p>
+        <label class="custom-btn">
+          Choose File
+          <input type="file" id="fileInput" accept=".png, .jpg, .jpeg" />
+        </label>
+      </div>
+      <div id="uploadStatus" class="upload-success"></div>
+    </div>
+  </form>
+
+  <script>
+    const fileInput = document.getElementById("fileInput");
+    const uploadStatus = document.getElementById("uploadStatus");
+    const dropArea = document.getElementById("dropArea");
+
+    fileInput.addEventListener("change", function () {
+      if (fileInput.files.length > 0) {
+        const fileName = fileInput.files[0].name;
+        uploadStatus.textContent = `✔ ${fileName} uploaded successfully!`;
+      }
+    });
+
+    // Optional: Drag & Drop
+    dropArea.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      dropArea.style.borderColor = "#60a5fa";
+    });
+
+    dropArea.addEventListener("dragleave", () => {
+      dropArea.style.borderColor = "#666";
+    });
+
+    dropArea.addEventListener("drop", (e) => {
+      e.preventDefault();
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        fileInput.files = files;
+        const fileName = files[0].name;
+        uploadStatus.textContent = `✔ ${fileName} uploaded successfully!`;
+      }
+    });
+  </script>
+
+</body>
+</html>

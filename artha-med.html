@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artha Med - IntelliCure</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="logo">💙 IntelliCure</div>
+      <nav>
+        <ul>
+          <li onclick="goTo('dashboard.html')">Dashboard</li>
+          <li>Appointments</li>
+          <li class="active">Artha Med</li>
+          <li>Smritiyan</li>
+          <li>Shwaas Veda</li>
+          <li>Neuro Setu</li>
+          <li>Records</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <h2><span class="green-text">Artha Med</span> – Simplify Medical Documents with AI</h2>
+      <p class="subtext">
+        Upload prescriptions, test results, or notes and get plain-language explanations.
+      </p>
+
+      <div class="labels">
+        <span class="label green">🧠 Medical Jargon Simplifier</span>
+        <span class="label blue">⚡ Instant Analysis</span>
+        <span class="label purple">😊 Patient-Friendly</span>
+      </div>
+
+      <div class="upload-section">
+        <h4>📤 Upload Medical Documents</h4>
+        <p>Drag and drop files or browse. Accepted: PDF, JPG, PNG.</p>
+
+        <div class="upload-box" onclick="document.getElementById('fileUpload').click()">
+          <p>⬆️<br>Drag & drop here<br><small>or click to browse</small></p>
+          <input type="file" id="centerFileInput" />
+
+          
+          <p class="formats">📄 PDF &nbsp; 🖼 JPG &nbsp; 🖼 PNG &nbsp; • Max 10MB</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+
+
+
+
+  <script src="script.js"></script>
+
+<!-- Link to your external JS file -->
+<script src="arth-med.js" defer></script>
+
+
+</body>
+</html>

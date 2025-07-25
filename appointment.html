@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Appointment</title>
+  <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+  <div class="appointment-container">
+    <h2>Appointments</h2>
+   <form class="appointment-form" id="appointmentForm">
+  <label for="doctor">Select Doctor</label>
+  <select id="doctor" name="doctor" required>
+    <option value="">-- Choose a doctor --</option>
+    <option value="Dr. Sharma">Dr. Sharma</option>
+    <option value="Dr. Patel">Dr. Patel</option>
+    <option value="Dr. Khan">Dr. Khan</option>
+  </select>
+
+  <label for="date">Select Date</label>
+  <input type="date" id="date" name="date" required>
+
+  <label for="time">Select Time</label>
+  <input type="time" id="time" name="time" required>
+
+  <label for="notes">Additional Notes (optional)</label>
+  <textarea id="notes" name="notes" rows="4" placeholder="Any specific concerns or questions?"></textarea>
+
+  <button type="submit">Book Appointment</button>
+</form>
+
+<!-- Confirmation Message -->
+<div id="confirmationMessage" style="display: none; margin-top: 30px; background-color: #1e1e1e; padding: 20px; border-radius: 8px; color: lightgreen; font-weight: 500;"></div>
+
+<script>
+  const form = document.getElementById("appointmentForm");
+  const messageDiv = document.getElementById("confirmationMessage");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // prevent page reload
+
+    const doctor = document.getElementById("doctor").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    messageDiv.innerHTML = `🎉Congratulations ✅ Your appointment with <strong>${doctor}</strong> on <strong>${date}</strong> at <strong>${time}</strong> has been successfully booked!`;
+    messageDiv.style.display = "block";
+
+    form.reset(); // optional: clear form fields
+  });
+</script>
+
+
+
+</body>
+</html>

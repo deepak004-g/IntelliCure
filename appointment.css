@@ -1,0 +1,59 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+.appointment-container {
+  background-color: #1e1e1e;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+select,
+input[type="date"],
+input[type="time"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2c2c2c;
+  color: white;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #a855f7;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #9333ea;
+}

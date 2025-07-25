@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="logo">💙 IntelliCure</div>
+      <nav>
+        <ul>
+          <li class="active" onclick="goTo('dashboard.html')">Dashboard</li>
+          <li>Appointments</li>
+          <li onclick="goTo('artha-med.html')">Artha Med</li>
+          <li>Smritiyan</li>
+          <li>Shwaas Veda</li>
+          <li>Neuro Setu</li>
+          <li>Records</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="cards">
+        <div class="card green">
+          <span class="tag">AI Ready</span>
+          <h2>Artha Med</h2>
+          <p>Simplify medical jargon into clear, patient-friendly language.</p>
+          <button onclick="goTo('artha-med.html')">Simplify ➜</button>
+        </div>
+        <div class="card blue">
+          <span class="tag">Available</span>
+          <h2>Appointment Booking</h2>
+          <p>Book doctor appointments with AI scheduling.</p>
+          <button onclick="goTo('appointment.html')">Book Now ➜</button>
+
+        </div>
+        <div class="card pink">
+          <span class="tag">Neural Net</span>
+          <h2>Smritiyan</h2>
+          <p>AI-powered cognitive assessment for Alzheimer's detection.</p>
+          <button onclick="goTo('smritiyan.html')">Analyze ➜</button>
+        </div>
+        <div class="card yellow">
+          <span class="tag">Deep Learning</span>
+          <h2>Shwaas Veda</h2>
+          <p>Respiratory scan for pneumonia detection.</p>
+          <button onclick="goTo('Shwaasveda.html')">Scan ➜</button>
+        </div>
+        <div class="card purple">
+          <span class="tag">AI Vision</span>
+          <h2>Neuro Setu</h2>
+          <p>Brain scan analysis for tumor detection.</p>
+          <button onclick="goTo('neurosetu_upload.html')">Scan ➜</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
